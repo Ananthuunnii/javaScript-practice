@@ -280,6 +280,92 @@ let myvalue = valueCheck >0 ? "posative nnumber" : valueCheck< 0 ? "negative num
 console.log(myvalue)
 
 
+// loops
+let i = 0
+while (i <10){
+    console.log(i)
+    i+=1
+}
+
+// forloop
+
+for (let i = 0;i<=10;i++){
+    console.log(i)
+}
+
+let mybucket = [1,2,3,4,5];
+
+for (myb of mybucket){
+    console.log(myb)
+}
+
+
+mybucket.foreach(mybb =>{
+    console.log(mybb)
+});
+
+
+
+// convet string to number
+
+let myAge = "29";
+let smyAge = parseint(myAge);
+console.log(smyAge);
+
+
+
+// Nan  - not  a number
+
+let mybox = "abcd"
+
+if (isNaN(mybox)){
+    console.log("it's not a number")
+}else{
+    console.log("it's a number")
+}
+
+
+// ternary operater
+
+
+let mynumber1 = 9
+let myanswer = mynumber1 === 9 ? "it is 9" : "it's not number"
+console.log(myanswer)
+
+
+// var - it is a global variable 
+// if it declared anywhere we can call if the calling below it declared it's undefined
+// we can reasign variable and var 
+
+
+// let - is block scope and we cant redeclare using let
+// we can reassign 
+// and we can't access the let variable outside scope
+
+
+// try catch 
+let bignumber = 9
+try{
+
+}catch{
+    
+}
+
+// const - it is a block scope
+// we can't change the value and in declaration we assign the value
+// we can update the value
+
+
+// object freezing
+
+const employee = {
+    id:1,
+    empname : "hello"
+}
+Object.freeze(employee)
+// one's we freeze the object we can't able to change
+
+
 
 
 
