@@ -170,20 +170,3 @@ class emp_class_2 extends emp_class_1{
 var emp_c2_obj = new emp_class_2();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

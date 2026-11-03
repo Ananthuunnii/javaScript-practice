@@ -252,65 +252,65 @@ let cusromerDetails = {
 // object inside array
 let bucketarr = [{name:"annu",place:"kkd"},{name:"aswin",place:"pkd"}]
 // console.log(bucketarr)
-console.log(bucketarr[0]["name"])
+// console.log(bucketarr[0]["name"])
 
 
 // convert string to number
 
 let con = "Geeva"
 
-console.log(parseInt(con[0]))
+// console.log(parseInt(con[0]))
 
 
 
 // isNan is used for to checak the given is a number or not
 //NaN - not a number
 let numbercheck = 1;
-if (isNaN(numbercheck)){
-    console.log("it is not  number")
-}else{
-    console.log("it is a number")
-}
+// if (isNaN(numbercheck)){
+//     console.log("it is not  number")
+// }else{
+//     console.log("it is a number")
+// }
 
 
 // ternary operater
 let valueCheck = 2;
 
 let myvalue = valueCheck >0 ? "posative nnumber" : valueCheck< 0 ? "negative number" : "zero";
-console.log(myvalue)
+// console.log(myvalue)
 
 
 // loops
 let i = 0
 while (i <10){
-    console.log(i)
+    // console.log(i)
     i+=1
 }
 
 // forloop
 
 for (let i = 0;i<=10;i++){
-    console.log(i)
+    // console.log(i)
 }
 
 let mybucket = [1,2,3,4,5];
 
 for (myb of mybucket){
-    console.log(myb)
+    // console.log(myb)
 }
 
 
-mybucket.foreach(mybb =>{
-    console.log(mybb)
-});
+// mybucket.foreach(mybb =>{
+//     // console.log(mybb)
+// });
 
 
 
 // convet string to number
 
 let myAge = "29";
-let smyAge = parseint(myAge);
-console.log(smyAge);
+// let smyAge = parseint(myAge);
+// console.log(smyAge);
 
 
 
@@ -318,11 +318,11 @@ console.log(smyAge);
 
 let mybox = "abcd"
 
-if (isNaN(mybox)){
-    console.log("it's not a number")
-}else{
-    console.log("it's a number")
-}
+// if (isNaN(mybox)){
+//     console.log("it's not a number")
+// }else{
+//     console.log("it's a number")
+// }
 
 
 // ternary operater
@@ -330,7 +330,7 @@ if (isNaN(mybox)){
 
 let mynumber1 = 9
 let myanswer = mynumber1 === 9 ? "it is 9" : "it's not number"
-console.log(myanswer)
+// console.log(myanswer)
 
 
 // var - it is a global variable 
@@ -366,7 +366,228 @@ Object.freeze(employee)
 // one's we freeze the object we can't able to change
 
 
+//normal function
 
+function mydetails(){
+    // console.log("my normal function details")
+}
+
+
+// arrow function
+
+let myarrowfun = ()=>{
+    // console.log("welcome to my arrow function")
+}
+myarrowfun();
+
+
+//arrow function with passing parameter
+
+let myarrowdetails = (myname,salary)=>{
+    // console.log("my name :",myname," : ",salary)
+}
+myarrowdetails("RAM",35000)
+
+
+var customer = [{
+    "name":"abhi",
+    "price":"2000.09",
+    "location": "Mumbai"
+    },
+    {
+    "name":"ammu",
+    "price":"100.58",
+    "location": "Kochi"
+    },
+    {
+    "name":"yash",
+    "price":"200.76",
+    "location": "Chennai"
+    },
+    {
+    "name":"bella",
+    "price":"500.29",
+    "location": "Pune"
+    }
+]
+
+
+// without arrow function
+let bobcuname = customer.filter(function(customer){
+    if (customer.name =="yash"){
+        return customer
+    }
+})
+// console.log(bobcuname)
+
+
+// with arrow function
+
+let coccuname = customer.filter((customer)=>{
+    if (customer.name == "bella"){
+        return customer
+    }
+})
+// console.log(coccuname)
+
+
+
+//function with default parameters
+
+function orderDetails(id,name,date = '03/11/2026'){
+    // console.log(id,name,date)
+}
+orderDetails(10,"Golam")
+orderDetails(10,"Golam","01/11/2026")
+
+function TeaShop(name,location,...argmore){
+    // console.log("name: ",name," location :",location)
+    // console.log("more :",argmore)
+}
+
+TeaShop("Sree","tanjavoor",500,"2 staff","working days")
+
+
+// spread operater
+
+// used to copy a array to existing array condinuation
+
+let highjump2026 = [1,2,3,4,5,6]
+let highjump2027 = [10,20,30,40,...highjump2026]
+// console.log(highjump2027) // this is spread operater
+let highjumpTotal = [...highjump2026,...highjump2027]
+// console.log(highjumpTotal)
+
+
+
+// destructuring
+
+let myvehicleColl = ["GS300","alto800","fortuner","volvo"]
+
+
+// we ushaly wish to write 
+
+let [bike,car,suv,bus] = myvehicleColl
+
+// insted we do
+
+
+let [...allvehicles] = myvehicleColl
+// console.log(allvehicles)
+
+
+// template leterals
+
+
+let mysheading = `hello am Swashthi and my guarage is filled with ${allvehicles}`;
+// console.log(mysheading)
+
+
+
+
+// class
+
+class myhome{
+    constructor(){
+        // console.log("hi am inside my constructor")
+    }
+}
+
+let mh = new myhome;
+
+
+
+// adding property to class
+
+class mybook{
+    book_id;
+    book_name;
+
+    constructor(){
+        // console.log("inside the constructor starting");
+        this.book_id = 101 ;
+        this.book_name = "The Grate Success";
+        // console.log("inside the constructor end");
+        // console.log(`the book name is ${this.book_name} and book is is ${this.book_id}`)
+
+    }
+}
+
+let stu1 = new mybook();
+
+
+
+// passing the parameter
+
+class mybookstore{
+    book_id;
+    book_name;
+
+    constructor(id,name){
+        // console.log("inside the constructor starting");
+        this.book_id = id;
+        this.book_name = name;
+        // console.log("inside the constructor end");
+        
+    }
+    getBookDetails(){
+        console.log(`the book name is ${this.book_name} and book ID is ${this.book_id}`)
+    }
+}
+
+let mystu1 = new mybookstore(101,'"The Grate Success"');
+mystu1.getBookDetails()
+
+
+var emp_database = [{
+    "name":"abhi",
+    "price":"2000.09",
+    "location": "Mumbai"
+    },
+    {
+    "name":"ammu",
+    "price":"100.58",
+    "location": "Kochi"
+    },
+    {
+    "name":"yash",
+    "price":"200.76",
+    "location": "Chennai"
+    },
+    {
+    "name":"bella",
+    "price":"500.29",
+    "location": "Pune"
+    }
+]
+
+// inheritance
+
+
+class animal{
+    constructor(sound){
+        console.log("animal speak :",sound)
+    }
+}
+
+class Bigdog extends animal{
+    constructor(){
+        super("Bow bow bow.....")
+        console.log("dog speak")
+    }
+}
+
+let mydog = new Bigdog()
+
+
+
+// module in js
+
+// export const Country = "USA";
+
+// export function names(myname){
+//     return myname*2
+// }
 
 
 
