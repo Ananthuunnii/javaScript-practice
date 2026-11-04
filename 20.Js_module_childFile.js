@@ -12,3 +12,8 @@ export function add(a,b){
 export default function homeTown(){
     return "Ernakulam";
 }
+
+
+export function multiplicationtable(){
+    return "hello";
+}

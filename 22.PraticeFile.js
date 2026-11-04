@@ -531,7 +531,7 @@ class mybookstore{
         
     }
     getBookDetails(){
-        console.log(`the book name is ${this.book_name} and book ID is ${this.book_id}`)
+        // console.log(`the book name is ${this.book_name} and book ID is ${this.book_id}`)
     }
 }
 
@@ -566,14 +566,14 @@ var emp_database = [{
 
 class animal{
     constructor(sound){
-        console.log("animal speak :",sound)
+        // console.log("animal speak :",sound)
     }
 }
 
 class Bigdog extends animal{
     constructor(){
         super("Bow bow bow.....")
-        console.log("dog speak")
+        // console.log("dog speak")
     }
 }
 
@@ -590,8 +590,191 @@ let mydog = new Bigdog()
 // }
 
 
+/********************  CLASS  **********************/
 
 
+class SYS_Employee{
+    name = "noname";
+    age = 0;
+
+    constructor(){
+        // console.log("constructor is calling")
+        this.name = "HULK";
+        this.age = 101;
+    }
+    display(){
+        // console.log("name is :",this.name,", age:",this.age)
+    }
+}
+
+let sys = new SYS_Employee()
+sys.display()
+
+
+let sys1 = new SYS_Employee()
+sys1.name = "Raj"
+sys1.age = 1001
+sys1.display()
+
+
+/********************  Encapsulation  **********************/
+
+
+
+class PUNB_BANK{
+
+    Savings = 0;   // public
+    #balance = 0;  // privete
+}
+
+const  punb = new PUNB_BANK();
+
+punb.Savings = 1000;
+// punb.#balance = 100  // we can't use the private member
+
+
+class indian_bank{
+
+    #balance = 0;
+    constructor(balance=0){
+        this.#balance = balance
+    }
+    deposite(depo){
+        this.#balance +=depo
+    }
+    withdraw(wdw){
+        this.#balance-=wdw;
+    }
+    getbalance(){
+        return this.#balance
+    }
+}
+
+const customer_1 = new indian_bank();
+customer_1.deposite(1500)
+customer_1.withdraw(500)
+customer_1.deposite(2000)
+customer_1.withdraw(100)
+customer_1.withdraw(400)
+console.log("balance :",customer_1.getbalance());
+
+
+
+
+
+
+/********************  inheritance  **********************/
+
+
+class wildanimal{
+    
+    type;
+    constructor(atype){
+        this.type = atype
+    }
+    catogary(){
+        console.log("this is a ",this.type,"animal")
+    }
+}
+
+class wildDOG extends wildanimal{
+
+    bread;
+    constructor(atype,dbread){
+        super(atype);
+        this.bread = dbread;
+    }
+    animalDetails(){
+        console.log("this animal bread is a ",this.bread)
+    }
+}
+
+const faveratedog = new wildDOG("nonVeg","German");
+faveratedog.animalDetails();
+faveratedog.catogary();
+
+
+/********************  Polymorphosm  **********************/
+
+
+class Animal{
+    makesound(){
+        console.log("animal sound")
+    }
+}
+
+class cat extends Animal{
+    // makesound(){
+    //     // console.log("cat make sound")
+    // }
+}
+const wildcat = new cat();
+wildcat.makesound()
+
+
+/********************** abstraction ***************************/
+
+
+class payment{
+    pay(){
+        console.log("payment is done")
+    }
+}
+class Creditcard extends payment{
+    pay(){
+        console.log("pay using credit card")
+    }
+}
+class UPI extends payment{
+    pay(){
+        console.log("pay using UPI")
+    }
+}
+
+class Debitcard extends payment{
+    pay(){
+        console.log("pay using Debitcard")
+    }
+}
+
+// abstraction means 
+// give this perticular function to someone
+const customerpay = new UPI();
+customerpay.pay();
+
+
+
+
+/********************** LocalStorage ***********************/
+
+localstorage.setitem("username","Spiderman")
+localstorage.setitem("password","Spiderman@123")
+localstorage.removeitem("username");
+localstorage.removeitem("password");
+
+localstorage.setitem("username","Spiderman")
+let theusername = localstorage.getitem("username")
+console.log("username is ",theusername);
+
+localstorage.clear()
+
+/********************** SessionsStorage ***********************/
+
+sessionStorage.setItem("username","Spiderman")
+sessionStorage.setItem("password","Spiderman@123")
+
+sessionStorage.removeItem("password")
+
+let secusername = sessionStorage.getItem("username");
+console.log("section Storage username",secusername)
+
+sessionStorage.clear()
+
+/********************** Browser Cookies ***********************/
+
+document.cookie = "username = Hulk; expires = the, 04 Nov 2026 09:25:00 UTS;"
+
+document.cookie = "password = spiderman@123; expires = the, 04 Nov 2026 09:25:00 UTS;"
 
 
 
