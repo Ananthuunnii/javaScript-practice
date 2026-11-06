@@ -1,5 +1,6 @@
 /* ***********12. Conditional statements  JS ***********/
 
+
 //boolean is a datatype which  returns the true or false 
 
 var isAdminRole = true; // i enquire weather he is having  the admin  role or not

@@ -656,7 +656,7 @@ customer_1.withdraw(500)
 customer_1.deposite(2000)
 customer_1.withdraw(100)
 customer_1.withdraw(400)
-console.log("balance :",customer_1.getbalance());
+// console.log("balance :",customer_1.getbalance());
 
 
 
@@ -666,97 +666,96 @@ console.log("balance :",customer_1.getbalance());
 /********************  inheritance  **********************/
 
 
-class wildanimal{
+// class wildanimal{
     
-    type;
-    constructor(atype){
-        this.type = atype
-    }
-    catogary(){
-        console.log("this is a ",this.type,"animal")
-    }
-}
+//     type;
+//     constructor(atype){
+//         this.type = atype
+//     }
+//     catogary(){
+//         console.log("this is a ",this.type,"animal")
+//     }
+// }
 
-class wildDOG extends wildanimal{
+// class wildDOG extends wildanimal{
 
-    bread;
-    constructor(atype,dbread){
-        super(atype);
-        this.bread = dbread;
-    }
-    animalDetails(){
-        console.log("this animal bread is a ",this.bread)
-    }
-}
+//     bread;
+//     constructor(atype,dbread){
+//         super(atype);
+//         this.bread = dbread;
+//     }
+//     animalDetails(){
+//         console.log("this animal bread is a ",this.bread)
+//     }
+// }
 
-const faveratedog = new wildDOG("nonVeg","German");
-faveratedog.animalDetails();
-faveratedog.catogary();
+// const faveratedog = new wildDOG("nonVeg","German");
+// faveratedog.animalDetails();
+// faveratedog.catogary();
 
 
 /********************  Polymorphosm  **********************/
 
 
-class Animal{
-    makesound(){
-        console.log("animal sound")
-    }
-}
+// class Animal{
+//     makesound(){
+//         console.log("animal sound")
+//     }
+// }
 
-class cat extends Animal{
-    // makesound(){
-    //     // console.log("cat make sound")
-    // }
-}
-const wildcat = new cat();
-wildcat.makesound()
+// class cat extends Animal{
+//     // makesound(){
+//     //     // console.log("cat make sound")
+//     // }
+// }
+// const wildcat = new cat();
+// wildcat.makesound()
 
 
 /********************** abstraction ***************************/
 
 
-class payment{
-    pay(){
-        console.log("payment is done")
-    }
-}
-class Creditcard extends payment{
-    pay(){
-        console.log("pay using credit card")
-    }
-}
-class UPI extends payment{
-    pay(){
-        console.log("pay using UPI")
-    }
-}
+// class payment{
+//     pay(){
+//         console.log("payment is done")
+//     }
+// }
+// class Creditcard extends payment{
+//     pay(){
+//         console.log("pay using credit card")
+//     }
+// }
+// class UPI extends payment{
+//     pay(){
+//         console.log("pay using UPI")
+//     }
+// }
 
-class Debitcard extends payment{
-    pay(){
-        console.log("pay using Debitcard")
-    }
-}
+// class Debitcard extends payment{
+//     pay(){
+//         console.log("pay using Debitcard")
+//     }
+// }
 
 // abstraction means 
 // give this perticular function to someone
-const customerpay = new UPI();
-customerpay.pay();
+// const customerpay = new UPI();
+// customerpay.pay();
 
 
 
 
 /********************** LocalStorage ***********************/
+localStorage.setItem('username','Spiderman');
+localStorage.setItem("password","Spiderman@123");
+localStorage.removeItem("username");
+localStorage.removeItem("password");
 
-localstorage.setitem("username","Spiderman")
-localstorage.setitem("password","Spiderman@123")
-localstorage.removeitem("username");
-localstorage.removeitem("password");
+localStorage.setItem("username","Spiderman");
+let theusername = localStorage.getItem("username");
+// console.log("username is ",theusername);
 
-localstorage.setitem("username","Spiderman")
-let theusername = localstorage.getitem("username")
-console.log("username is ",theusername);
-
-localstorage.clear()
+localStorage.clear()
 
 /********************** SessionsStorage ***********************/
 
@@ -766,7 +765,7 @@ sessionStorage.setItem("password","Spiderman@123")
 sessionStorage.removeItem("password")
 
 let secusername = sessionStorage.getItem("username");
-console.log("section Storage username",secusername)
+// console.log("section Storage username",secusername)
 
 sessionStorage.clear()
 
@@ -775,6 +774,441 @@ sessionStorage.clear()
 document.cookie = "username = Hulk; expires = the, 04 Nov 2026 09:25:00 UTS;"
 
 document.cookie = "password = spiderman@123; expires = the, 04 Nov 2026 09:25:00 UTS;"
+
+
+
+
+
+/********************** Interview Preperation ***********************/
+
+// Q1
+
+// reverseWords("hello world from JS");
+// "JS from world hello"
+
+function reverseWords(inputstring){
+    let inputword = inputstring.split(" ")
+    let newword = ''
+    for(i=inputword.length-1;i>=0;i--){
+        // newword += inputword[i]
+        if (inputword[i] === "") continue;          // skip empty strings from extra spaces
+            newword += (newword ? " " : "") + inputword[i];
+        }
+    // console.log("newword output :",newword)
+}
+// reverseWords("hello world from JS")
+
+
+
+//Q2
+
+// countChars("hello");
+// { h: 1, e: 1, l: 2, o: 1 }
+
+function countCharsss(inputstring){
+    let wordcount = {};
+    for (let char of inputstring.toLowerCase()){
+        if (char ===" ") continue
+        wordcount[char] = wordcount[char] ? wordcount[char]+1 : 1
+    }
+    console.log("last output :",wordcount)
+}
+// countCharsss("hhhellooo000");
+
+
+//Need to understand
+
+//ND1
+// console.log("start with 0 sec")
+// setTimeout(()=>{
+//     console.log("after the 30 sec")
+// },3000)
+
+
+//ND2
+
+// const wait = (ms) => new Promise((resolve, reject) => {
+//   setTimeout(() => resolve("done"), ms);
+// });
+
+// wait(1000)
+//   .then((result) => console.log(result))   // "done"
+//   .catch((err) => console.log(err))        // runs if rejected
+//   .finally(() => console.log("cleanup"));  // runs either way
+
+
+// const order = (word) => new Promise ((resolve,reject)=>{
+//     setTimeout(()=> resolve("Done"),word);
+// })
+// order(4000)
+// .then()
+
+
+// const someoneorder = (wm) => new Promise((resolve)=>{
+//     setTimeout(()=> resolve("the someone order completed"),wm)
+// },wm)
+
+// someoneorder(4000)
+//     .then((result)=>console.log(result))
+//     .catch((error)=>console.log(error))
+//     .finally(()=>console.log("clearup"))
+
+
+// async function customerDetails(){
+//     console.log("customer async function started")
+//     let start = await someoneorder(5000)
+// }
+
+// customerDetails()
+// const someoneOrder = (ms) => new Promise((resolve) => {
+//   setTimeout(() => resolve("the order completed"), ms);  // resolve with a value, delay goes here
+// });
+
+// someoneOrder(4000)
+//   .then((result) => console.log(result))
+//   .catch((error) => console.log(error))
+//   .finally(() => console.log("cleanup"));
+
+// async function customerDetails() {
+//   console.log("customer async function started");
+//   try {
+//     const result = await someoneOrder(5000);
+//     console.log(result);
+//   } catch (error) {
+//     console.log("failed:", error);
+//   }
+// }
+
+// customerDetails();
+
+
+// Q4
+// Write a function getExpensiveNames(list, minPrice) that returns an array of the names, 
+// in uppercase, of customers whose price is greater than minPrice.
+
+
+// getExpensiveNames(customers, 150);
+// ["ABHI", "YASH", "BELLA"]
+// const customers = [
+//   { name: "abhi",  price: "2000.09", location: "Mumbai" },
+//   { name: "ammu",  price: "100.58",  location: "Kochi" },
+//   { name: "yash",  price: "200.76",  location: "Chennai" },
+//   { name: "bella", price: "500.29",  location: "Pune" }
+// ];
+// function getExpensiveNames(customers, minprice){
+//     return customers.filter((c)=>{ 
+//         if (c.price > minprice){
+//             c.name.toLowerCase
+//         }
+
+//     })
+// }
+// getExpensiveNames(customers, 150)
+// console.log(getExpensiveNames(customers, 150))
+
+
+// Q4
+// let foodcooking = new promise ((resolve,reject)=>{
+//     if (true){
+//         resolve("food is ready")
+//     }else{
+//         reject("food is not ready")
+//     }
+// })
+// foodcooking
+// .then((result)=>{
+//     console.log("resolved ",result)
+// })
+// .catch((error)=>{
+//     console.log("the error is ",error)
+// })
+
+//Q5
+
+// URL = "https://github.com/Ananthuunnii"
+// fetch(URL)
+// .then(Response = Response.json)
+// .catch((error)=> console.log("the error is ",error))
+
+// let mybasketbin = {
+//     name:"ball",
+//     age:1,
+//     color:"blue"
+// }
+
+// for (let bkbin in mybasketbin){
+//     console.log(mybasketbin[bkbin]);
+// }
+
+// let myname = "only success"
+// let darkworld = [1,2,3,4,5,6,7,8,9,"abcd"];
+// let emptyspace = []
+// for (let i of darkworld){
+//     console.log(i)
+//     emptyspace.shift("00")
+//     emptyspace.push(i)
+//     emptyspace.pop()
+// }
+// console.log(emptyspace)
+
+
+// function sportsman(){
+//     console.log("Sports man")
+// }
+
+// function throwball(callback){
+//     console.log("throwball")
+//     callback()
+// }
+// throwball(sportsman);
+
+// const someoneproducts = ["Keyboard", "Mouse", "Monitor"];
+// someoneproducts.splice(1,1,"Mousepade")
+// console.log("products list before adding : ",someoneproducts)
+
+
+// var customerId = [1,2,3,4]
+
+// console.log("array format",customerId) // this is the array format
+
+// console.log("before the function call :",JSON.stringify(customerId)); // this is string format
+// let wordchange = JSON.stringify(customerId)
+// console.log(typeof(wordchange))
+
+// let aforapple = 1
+// if(aforapple){
+//     console.log(aforapple)
+// }else if(aforapple == -1){
+//     console.log("a is negative");
+// }
+
+// let donemyjob = 100;
+
+// if (donemyjob >0 && donemyjob <=100){
+//     console.log("myjob inside the 100")
+// }
+// if (donemyjob >0 || donemyjob <100){
+//     console.log("my job || operater")
+// }
+
+// let tyre = "big";
+
+// switch (tyre){
+//     case "big":
+//         console.log("big")
+//         break;
+//     case "small":
+//         console.log("small");
+//         break;
+//     case "extra small":
+//         console.log("extra small")
+//         break;
+// }
+
+
+// var jiouser ={
+//     username : "aju",
+//     age: 79,
+//     location : "kolkata",
+//     dataplan :{
+//         Total_gb : "1.5GB",
+//         used_gb : "500MB"
+//     }
+
+// }
+// console.log(jiouser)
+// console.log(jiouser['username'])
+
+
+// var groupofjiouser =[{
+//     userid : 1,
+//     username : "aju",
+//     age: 79,
+//     location : "kolkata",
+//     dataplan :{
+//         Total_gb : "1.5GB",
+//         used_gb : "500MB"
+//     }
+
+// },{
+//     userid : 2,
+//     username : "aju",
+//     age: 79,
+//     location : "kolkata",
+//     dataplan :{
+//         Total_gb : "1.5GB",
+//         used_gb : "500MB"
+//     }
+
+// },{
+//     userid : 3,
+//     username : "aju",
+//     age: 79,
+//     location : "kolkata",
+//     dataplan :{
+//         Total_gb : "5.5GB",
+//         used_gb : "500MB",
+//         dataspeed :{
+//             per10sec :"10mb",
+//             per1sec :"1mb"
+//         }
+//     }
+// }]
+
+// console.log(groupofjiouser[2]["dataplan"]["dataspeed"])
+
+
+// var customerIdString_12 =  "1";
+// let convstr = parseInt(customerIdString_12);
+// console.log(convstr)
+
+// var customerIdString_1 =  "1";
+// var customerIdNumber = parseInt(customerIdString_1)
+// console.log(typeof(customerIdNumber))
+
+// let cusnums = 1;
+// if(isNaN(cusnums)){                         /// this isNaN only true with letters and undefined rest everything get false
+//     console.log("it's not a number");
+// }else{
+//     console.log("it's a number")
+// }
+
+
+
+// ternary operater
+
+// let ternum = 40;
+// let ter1num = ternum >=0 ? "it's posative" : "it's negative";
+// console.log(ter1num);
+// let trynumber = 10;
+// try{
+//     if (trynumber){
+//         console.log("output is ",trynumber);
+//     }else{
+//         console.log("it's empty :",trynumber)
+//     }
+// }catch(e){
+//     console.log("error :",e)
+// }
+
+
+// we can mute changes using const in array 
+
+const changingarray = ["a1","a2","a3","a4"]
+changingarray[1] = "b1";
+changingarray[0] = "b0";
+// console.log(changingarray)
+
+// we can mute changes using const in object 
+
+const changingobject ={
+    id :101,
+    name:"sparrow",
+    game:"GTA"
+}
+// changingobject[0] = 1001;
+changingobject.name = "sparrow2"
+// console.log(changingobject)
+
+
+function freezingpart(argfree){
+    Object.freeze(argfree)
+    argfree.id = 3;
+    return argfree;
+
+}
+let freeout = freezingpart(changingobject)
+// console.log(freeout)
+
+
+// arrow function 
+
+let myarrfun = ()=> {return "Hi arrow function"}    
+// console.log(myarrfun())
+
+// parameterpassing
+
+let myarrownum = "i have super power for tommorow interview";
+let myparafunct = (myarrownum)=>{
+    return myarrownum + " and i will conqure the interview";
+}
+// console.log(myparafunct(myarrownum))
+
+// arrary contain object 
+var ucustomer = [{
+    "name":"abhi",
+    "price":"2000.09",
+    "location": "Mumbai"
+    },
+    {
+    "name":"ammu",
+    "price":"100.58",
+    "location": "Kochi"
+    },
+    {
+    "name":"yash",
+    "price":"200.76",
+    "location": "Chennai"
+    },
+    {
+    "name":"bella",
+    "price":"500.29",
+    "location": "Pune"
+    }
+]
+// how to get the customers who is having the name = ammu
+let Tfiltername = ucustomer.filter(function(uc) {
+    if (uc.name == "ammu"){
+        // console.log("ammu in the list"+ uc.price);
+        return uc
+    }
+});
+// console.log(Tfiltername)
+
+
+function jofunction(name,age,salary = 120000,...timing){
+    console.log(`${name} age is ${age} and you will get salary $ ${salary}`)
+    console.log(`Timing of the work in daytime ${timing[0]}`)
+    console.log(`Timing of the work in night ${timing[1]}`)
+    console.log(`Timing of the work in late night ${timing[2]}`)
+}
+// jofunction("ME",27,130000,"11:20pm","12:00am","4:45am")
+
+// spread operater
+var customerInfo = ["william",23,"Marry",45,"jacky",64,"john",25,"Gargi"];
+var customerInfo_1 = ["Gorgena", 49,"jenner",19]
+
+var newcustomerinfoarray = [...customerInfo,...customerInfo_1]
+// console.log(newcustomerinfoarray)
+
+
+
+class newgeneration{
+
+    genid ;
+    genage;
+    genname;
+    constructor(cgenid,cgenage,cgenname){
+        this.genid = cgenid;
+        this.genage = cgenage;
+        this.genname = cgenname;
+        console.log("inside the constructor")
+        console.log(`the id ${this.genid} with name ${this.genname} age is ${this.genage}`)
+    }
+    display(clickID){
+        console.log("in display function :",clickID)
+    }
+}
+let newgen = new newgeneration(1, 25, "John")
+newgen.display("10045")
+
+
+
+
+
+
+
+
 
 
 

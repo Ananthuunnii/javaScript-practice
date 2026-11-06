@@ -4,7 +4,7 @@
 
 var customerIdString_1 =  "1";
 var customerIdNumber_1 = parseInt(customerIdString_1)
-console.log(type(customerIdNumber))
+console.log(typeof(customerIdNumber))
 console.log(customerIdString)
 
 var customerIdString_2 = "c1";
