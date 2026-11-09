@@ -250,7 +250,7 @@ let cusromerDetails = {
 }
 
 // object inside array
-let bucketarr = [{name:"annu",place:"kkd"},{name:"aswin",place:"pkd"}]
+// let bucketarr = [{name:"annu",place:"kkd"},{name:"aswin",place:"pkd"}]
 // console.log(bucketarr)
 // console.log(bucketarr[0]["name"])
 
@@ -1185,7 +1185,7 @@ var newcustomerinfoarray = [...customerInfo,...customerInfo_1]
 
 class newgeneration{
 
-    genid ;
+    genid;
     genage;
     genname;
     constructor(cgenid,cgenage,cgenname){
@@ -1199,13 +1199,140 @@ class newgeneration{
         console.log("in display function :",clickID)
     }
 }
-let newgen = new newgeneration(1, 25, "John")
-newgen.display("10045")
+class mygeneration extends newgeneration{
+    constructor(){
+        super(101,32,"Ronin")
+        console.log("inside the child class")
+    }
+}
+
+// let mygen = new mygeneration();
+// mygen.display("12345")
 
 
+// let newgen = new newgeneration(1, 25, "John")
+// newgen.display("10045")
 
 
+class skywalking{
+    #balance;
+    constructor(hbalance=0){
+        this.#balance = hbalance;
+        console.log("inside constructor")
+    }
+    depositing(deposit){
+        console.log('deposit amount :',deposit)
+        this.#balance+=deposit
+    }
+    accountbalance(){
+        return this.#balance
+    }
+}
+// let mysky = new skywalking()
+// mysky.depositing(5001);
+// console.log(mysky.accountbalance())
 
+
+class someonevehicle{
+    brand;
+    constructor(cbrand){
+        this.brand = cbrand
+    }
+    display(){
+        console.log("the brand is ",this.brand)
+    }
+}
+
+class someonecar extends someonevehicle{
+    model;
+    constructor(cbrand,cmodel){
+        super(cbrand)
+        this.model = cmodel
+    }
+    display(){
+        super.display()
+        console.log("the model is :",this.model)
+    }
+}
+// let soonvc = new someonecar("KEA","Seltos")
+// soonvc.display()
+
+// localStorage.setItem("username","success full person")
+// localStorage.setItem("password","no one can beat me i am the best")
+// localStorage.setItem("phonenumber","2244")
+// localStorage.removeItem("phonenumber")
+// localStorage.clear()
+
+
+// sessionStorage.setItem("username","success full person")
+// sessionStorage.setItem("password","no one can beat me i am the best")
+// sessionStorage.setItem("phonenumber","2244")
+// sessionStorage.removeItem("phonenumber")
+// sessionStorage.clear()
+
+// document.cookie = "username=sharpminded; expires = The, 07 Nov 2026 12:34:00 UTS;"
+
+
+function shownotification(){
+    alert("the button is clicked")
+};
+
+    // let gimgim = "abcd"
+    // let igmigm = "efg"
+    // console.log(gimgim.concat(igmigm))
+var employeeDetails = {
+    employeeName: "John",
+    salary: 30000,
+    city: "Bangalore"
+};
+
+employeeDetails.department = "designing"
+employeeDetails.location = "delhi"
+employeeDetails["employId"] = 1001
+// console.log(employeeDetails)
+
+delete employeeDetails.location
+// console.log(employeeDetails)
+
+var authorDetails = {
+    authorName: "J. K. Rowling",
+    bookName: "Harry Potter series",
+    characterNames: ["Harry Potter", "Hermione Granger", "Ron Weasley"]
+};
+
+console.log(authorDetails.characterNames[0])
+console.log(authorDetails["characterNames"][0])
+console.log(authorDetails.characterNames.length)
+authorDetails.characterNames.push("spiderman")
+console.log(authorDetails["characterNames"])
+console.log("%cjavascript","background-color:blue")
+console.log("%cJavaScript", "background-color: red");
+
+(function () {
+    let bookName = "Harry Potter series";
+    console.log("Book Name:", bookName);
+})();
+
+const newvalue = new Promise((resolve)=>{
+    let a = true;
+    if(a){
+        resolve ("it's true ")
+    }
+})
+// newvalue()
+// .then(()=>{
+//     console.log("resolved")
+// })
+// .catch((e)=>{
+//     console.log("error")
+// })
+
+// try{
+//     console.log()
+// }
+// catch(e){
+
+// }
 
 
 

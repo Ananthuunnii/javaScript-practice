@@ -36,5 +36,9 @@ export class garmentsGoods{
     }
 }
 
+export function myworld(w,f){
+    return w+f
+}
+
 
 
